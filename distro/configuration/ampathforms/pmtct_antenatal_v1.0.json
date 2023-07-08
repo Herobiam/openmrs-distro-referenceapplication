@@ -632,7 +632,7 @@
                   "intent":"*",
                   "required":"true",
                   "hide":{
-                    "hideWhenExpression":"latest_hiv_test_result !== '138571AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || hiv_test_result !== '138571AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                    "hideWhenExpression":"latest_hiv_test_result == '664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'|| latest_hiv_test_result == '1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || latest_hiv_test_result == '54b96458-6585-4c4c-a5b1-b3ca7f1be351' || hiv_test_result == '664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || hiv_test_result == '1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || hiv_test_result == '54b96458-6585-4c4c-a5b1-b3ca7f1be351'"
                   }
                 }
               ]
@@ -756,7 +756,7 @@
                   "intent":"*",
                   "required":"true",
                   "hide":{
-                    "hideWhenExpression":"antenatal_visit_type == '160530AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && latest_partner_hiv_test_status == '8b8951a8-e8d6-40ca-ad70-89e8f8f71fa8' || latest_partner_hiv_test_result == '138571AAAAAAA7AAAAAAAAAAAAAAAAAAAAAAA'"
+                    "hideWhenExpression":"antenatal_visit_type == '160530AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || latest_partner_hiv_test_status == '8b8951a8-e8d6-40ca-ad70-89e8f8f71fa8' || latest_partner_hiv_test_result == '138571AAAAAAA7AAAAAAAAAAAAAAAAAAAAAAA'"
                   }
                 }
               ]
@@ -769,7 +769,7 @@
                 "concept": "161557AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                 "rendering": "fixed-value",
                 "calculate": {
-                   "calculateExpression": "myValue = '8b8951a8-e8drrr6-40ca-ad70-89e8f8f71fa8'"
+                   "calculateExpression": "resolve(api.getLatestObs(patient.id, '161557AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', '2549af50-75c8-4aeb-87ca-4bb2cef6c69a'))?.valueCodeableConcept?.coding[0]?.code"
                  },
                  "answers": [
                   {
@@ -894,7 +894,7 @@
                 "concept": "1436AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                 "rendering": "fixed-value",
                 "calculate": {
-                  "calculateExpression": "myValue = '138571AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                  "calculateExpression": "resolve(api.getLatestObs(patient.id, '1436AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', '2549af50-75c8-4aeb-87ca-4bb2cef6c69a'))?.valueCodeableConcept?.coding[0]?.code"
                 },
                 "answers": [
                   {
